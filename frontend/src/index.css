@@ -1,0 +1,60 @@
+/** @format */
+
+:root {
+  --main-bg-color: black;
+  --main-txt-color: bisque;
+}
+
+body {
+  margin: 2%;
+  background-color: var(--main-bg-color);
+  font-family: "Roboto", "Oxygen", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: large;
+}
+
+.navStyle {
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-txt-color);
+  font-size: 40px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.clockStyle h3 {
+  color: var(--main-txt-color);
+  font-size: 90px;
+  margin: 6% 10% 10% 26%;
+}
+
+.tempStyle {
+  color: var(--main-txt-color);
+  font-size: large;
+  margin-left: 35%;
+  margin-right: 20%;
+  margin-top: 3%;
+  padding-top: 10px;
+}
+.radioStyle {
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-txt-color);
+  font-size: 18px;
+  align-items: center;
+  height: 250px;
+  width: auto;
+  padding-bottom: 20px;
+  overflow:hidden; 
+  overflow-y:scroll
+}
+.radioComponent h3 {
+    margin: 0 0 0 15px;
+    padding:0;
+    font-size: 22px;
+    direction:ltr;
+
+}
+
+.radioButtonStyle {
+  width: 400px;
+}
