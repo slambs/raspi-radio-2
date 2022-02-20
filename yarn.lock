@@ -7688,6 +7688,18 @@
     "lower-case" "^2.0.2"
     "tslib" "^2.0.3"
 
+"node-addon-api@^1.6.3":
+  "integrity" "sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg=="
+  "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-1.7.2.tgz"
+  "version" "1.7.2"
+
+"node-dht-sensor@^0.4.3":
+  "integrity" "sha512-DMJO6UjWiDF3WP0qAgzPXDAAMAT0VVedFbtCUU/jynIRPO2Sa+2zwA3d7ySriha87Tccd4e+kiJoOxSc9BkSKw=="
+  "resolved" "https://registry.npmjs.org/node-dht-sensor/-/node-dht-sensor-0.4.3.tgz"
+  "version" "0.4.3"
+  dependencies:
+    "node-addon-api" "^1.6.3"
+
 "node-forge@^0.10.0":
   "integrity" "sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA=="
   "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-0.10.0.tgz"
