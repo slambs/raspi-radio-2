@@ -29,10 +29,8 @@ export class Radio extends Component {
   render() {
     return (
       <div className="radioComponent">
-        {/* <p>List of Radio Stations</p> */}
         <ul className='list-group radioStyle'>
           {STATIONS.map((radioStations, i) =>{ 
-          console.log(i)
           const className = 'list-group-item radioButtonStyle list-group-item-secondary'
           return(
             <li id={radioStations.name} 
@@ -49,9 +47,6 @@ export class Radio extends Component {
   }
   
   handleRadio(stationClicked) {
-    console.log("Handle Radio Clicked")
-    console.log(1,this)
-    console.log(2,stationClicked)
 
     this.state.sound.stop()
     this.state.sound = new Howl({

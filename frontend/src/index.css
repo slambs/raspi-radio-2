@@ -4,11 +4,15 @@
   --main-bg-color: black;
   --main-txt-color: bisque;
 }
+@font-face {
+  font-family: Popins;
+  src: url(./font/Poppins-Regular.ttf);
+}
 
 body {
   margin: 2%;
   background-color: var(--main-bg-color);
-  font-family: "Roboto", "Oxygen", sans-serif;
+  font-family: Popins;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: large;
@@ -36,25 +40,31 @@ body {
   margin-top: 3%;
   padding-top: 10px;
 }
+
 .radioStyle {
   background-color: var(--main-bg-color) !important;
   color: var(--main-txt-color);
   font-size: 18px;
   align-items: center;
-  height: 250px;
+  height: 200px;
   width: auto;
   padding-bottom: 20px;
   overflow:hidden; 
-  overflow-y:scroll
+  overflow-y:scroll;
 }
+
 .radioComponent h3 {
     margin: 0 0 0 15px;
     padding:0;
     font-size: 22px;
     direction:ltr;
+    
 
+}
+.radioComponent{
+  border-radius: 25px;
 }
 
 .radioButtonStyle {
-  width: 400px;
+  width: 380px;
 }
