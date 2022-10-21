@@ -3,19 +3,19 @@ import React, { Component } from "react"
 class NavBar extends Component {
   render() {
     return (
-      <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light navStyle">
-            <a className="nav-item nav-link " href="/">
+      <>
+        <nav>
+            <a className='navbarItem1' href="/">
               Clock
             </a>
-            <a className="nav-item nav-link" href="/Radio">
+            <a className='navbarItem2'  href="/Radio">
               Radio
             </a>
-            <a className="nav-item nav-link" href="/Play">
+            <a className='navbarItem3'  href="/Play">
               ?
             </a>
         </nav>
-      </React.Fragment>
+      </>
     )
   }
 }

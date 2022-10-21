@@ -20,11 +20,9 @@ class Clock extends Component {
   
   render() {
     return (
-      <React.Fragment>
         <div className='clockStyle'>
-          <h3 id='time'>{this.state.time.toLocaleTimeString()}</h3>
-        </div>
-      </React.Fragment>
+          <div id='time'>{this.state.time.toLocaleTimeString()}</div>
+        </div> 
     )
   }
 }

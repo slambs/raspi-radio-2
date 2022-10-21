@@ -12,11 +12,11 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className='radioWrapper'>
           <NavBar />
           <Routes>
-            <Route path='/radio' element={<Radio />}></Route>
-            <Route path='/*' element={<Clock />}></Route>
+            <Route path='/radio' element={<Radio/>}></Route>
+            <Route path='/*' element={<div className='largeClock'><Clock /></div>}></Route>
           </Routes>
           <Temp />
         </div>
