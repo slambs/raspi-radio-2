@@ -29,9 +29,9 @@ export class Radio extends Component {
   render() {
     return (
       <div className="radioComponent">
-        <ul className='list-group radioStyle'>
+        <ul className='d-flex radioStyle'>
           {STATIONS.map((radioStations, i) =>{ 
-          const className = 'list-group-item radioButtonStyle list-group-item-secondary'
+          const className = 'd-flex list-group-item  list-group-item-secondary'
           return(
             <li id={radioStations.name} 
                 key={i}
@@ -41,7 +41,7 @@ export class Radio extends Component {
             </li>
           )})}
         </ul>
-        <Clock/>
+        <div className='smallClock'><Clock/></div>
       </div>
     )
   }
