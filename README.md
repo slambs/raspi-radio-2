@@ -1,20 +1,33 @@
- Documentation here....
+Documentation here....
 
 A simple Clock / Radio App for raspberry pi.
 
- todo 
+todo
 
- * build the backend 
+How do I start this damn project?
 
- * get the sensors to work
+```
+cd backend
+npm start
 
- * get the weather api to work
+```
 
- * get the screen dimness control for the raspi to work
+to have the latest version served you need to build react first
 
- * get a normal mp3 player to work
+go to localhost:9000 on the browser and the project should be running
 
- * copy the old documentation here and write the new ones here --> write the documentation
+-   build the backend
+    -- it should read the temp from the sensor and display it next to inside.
+    -- the api should get the outside temp and location and display it outside.
 
+-   get the sensors to work
 
- sources
+-   get the weather api to work
+
+-   get the screen dimness control for the raspi to work
+
+-   get a normal mp3 player to work
+
+-   copy the old documentation here and write the new ones here --> write the documentation
+
+sources
