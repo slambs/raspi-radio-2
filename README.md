@@ -2,9 +2,7 @@ Documentation here....
 
 A simple Clock / Radio App for raspberry pi.
 
-todo
-
-How do I start this damn project?
+To start the project do:
 
 ```
 cd backend
