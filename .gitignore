@@ -1,1 +1,18 @@
-node_modules
+# Ignore node_modules in the root directory
+node_modules/
+
+# Ignore node_modules in the backend directory
+/backend/node_modules/
+
+# Ignore node_modules in the frontend directory
+/frontend/node_modules/
+
+# Optionally, ignore other common files or directories
+.DS_Store
+.env
+.vscode/
+.idea/
+
+# If you have build or dist folders in frontend or backend
+/frontend/dist/
+/backend/build/
