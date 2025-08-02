@@ -10,8 +10,6 @@ npm start
 
 ```
 
-to have the latest version served you need to build react first
-
 go to localhost:9000 on the browser and the project should be running
 
 -   build the backend
@@ -29,3 +27,8 @@ go to localhost:9000 on the browser and the project should be running
 -   copy the old documentation here and write the new ones here --> write the documentation
 
 sources
+
+questions:
+Do I have the latest version served you need to build react first
+What dependencies do I have
+Can I use Vite?
