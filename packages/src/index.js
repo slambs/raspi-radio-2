@@ -1,16 +1,9 @@
-import 'jquery';
-import 'popper.js/dist/umd/popper';
-import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
+// Logic for displaying a clock
 
-import App from './components/App/App';
-import React from 'react';
-import ReactDOM from 'react-dom';
+const clock = document.getElementById('largeClock');
 
-ReactDOM.render(
-    <React.Fragment>
-        <App />
-    </React.Fragment>,
-    document.getElementById('root')
-);
+function drawClock(){
+    clock.textContent = new Date().toLocaleTimeString();
+}
+  
+setInterval(drawClock, 1000);
