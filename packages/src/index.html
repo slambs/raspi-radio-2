@@ -5,36 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raspi Radio</title>
-    <link rel="stylesheet" href="index.css" />
 
+    <script src="index.js" async></script>
+
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
 
-    <div className="AppWrapper">
+    <div class="AppWrapper">
         <nav>
-            <a className="navbarItemClock" href="/">
+            <a class="navbarItemClock" href="/">
                 Clock
             </a>
-            <a className="navbarItem2" href="/Radio">
+            <a class="navbarItem2" href="/Radio">
                 Radio
             </a>
-            <a className="navbarItem3" href="/Play">
+            <a class="navbarItem3" href="/Play">
                 ?
             </a>
         </nav>
 
         <!-- clock -->
-        <div id="largeClock" class="largeClock" visible />
+        <div id="largeClock" class="largeClock">00:00:00</div>
 
         <!-- radio -->
+        <div id="radio"></div>
 
     </div>
 
 
 
 
-    <script src="index.js" />
+
 </body>
 
 
