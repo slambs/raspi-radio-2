@@ -16,22 +16,30 @@
     <div class="AppWrapper">
         <nav>
             <a class="navbarItemClock" href="/">
-                Clock
+                🕛
             </a>
-            <a class="navbarItem2" href="/Radio">
-                Radio
+            <a class="navbarItemRadio" href="/Radio">
+                📻
             </a>
-            <a class="navbarItem3" href="/Play">
-                ?
+            <a class="navbarItemSettings" href="/Settings">
+                ⛭
             </a>
         </nav>
 
         <!-- clock -->
-        <div id="largeClock" class="largeClock">00:00:00</div>
+        <div id="largeClock" class="largeClock" hidden>00:00:00</div>
 
         <!-- radio -->
-        <div id="radio"></div>
+        <div class="radio">
+            <h4>Kiss 88.9</h4>
+            <audio controls>
+                <source src="https://stream.radiojar.com/64p6ktzntg0uv" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
+        <!-- settings -->
+        <div id="settings"></div>
     </div>
 
 

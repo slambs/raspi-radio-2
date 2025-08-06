@@ -7,6 +7,6 @@ function drawClock() {
     }
 }
 
-drawClock();
+drawClock(); //for a quick initial load
 
 setInterval(drawClock, 1000);

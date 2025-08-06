@@ -14,21 +14,50 @@
 body {
     background-color: var(--main-bg-color);
     font-family: Popins;
-    display: grid;
 }
 
 .AppWrapper {
     display: grid;
     grid-template-columns: 200px 400px 200px;
     grid-template-rows: 100px 240px 100px;
+    /* This makes the nav a grid item that spans the whole first row */
+    grid-template-areas:
+        'nav nav nav'
+        'radio radio radio'
+        '. . .';
+}
+
+nav {
+    /* Make the nav element a grid container */
+    display: grid;
+    grid-area: nav; /* Position the nav in the grid-area we defined */
+    grid-template-columns: 1fr 1fr 1fr; /* Create three columns for the nav items */
+}
+
+.radio {
+    display: grid;
+    grid-column: 2/3;
+    align-self: center;
+    grid-template-columns: 1fr;
+    color: red;
 }
 
 .navbarItemClock {
     justify-self: center;
-    grid-row: 1;
-    grid-column: 1;
+    align-self: center;
     font-size: var(--txt-size-large);
-    margin-left: 1em;
+}
+
+.navbarItemRadio {
+    justify-self: center;
+    align-self: center;
+    font-size: var(--txt-size-large);
+}
+
+.navbarItemSettings {
+    justify-self: center;
+    align-self: center;
+    font-size: var(--txt-size-large);
 }
 
 .clockStyle {
