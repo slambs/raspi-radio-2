@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raspi Radio</title>
 
-    <script src="index.js" async></script>
+    <script src="index.js" defer type="module"></script>
 
     <link rel="stylesheet" href="index.css" />
 </head>
@@ -15,27 +15,27 @@
 
     <div class="AppWrapper">
         <nav>
-            <a class="navbarItemClock" href="/">
+            <a class="navlink navbarItemClock" href="/">
                 🕛
             </a>
-            <a class="navbarItemRadio" href="/Radio">
+            <a class="navlink navbarItemRadio" href="/Radio">
                 📻
             </a>
-            <a class="navbarItemSettings" href="/Settings">
+            <a class="navlink navbarItemSettings" href="/Settings">
                 ⛭
             </a>
         </nav>
 
         <!-- clock -->
-        <div id="largeClock" class="largeClock" hidden>00:00:00</div>
+        <div id="largeClock" class="largeClock">00:00:00</div>
 
         <!-- radio -->
-        <div class="radio">
-            <h4>Kiss 88.9</h4>
+        <div class="radio" hidden>
+            <!-- <h4>Kiss 88.9</h4>
             <audio controls>
                 <source src="https://stream.radiojar.com/64p6ktzntg0uv" type="audio/mpeg">
                 Your browser does not support the audio element.
-            </audio>
+            </audio> -->
         </div>
 
         <!-- settings -->
