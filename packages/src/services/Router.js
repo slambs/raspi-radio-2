@@ -8,6 +8,7 @@ const Router = {
             });
         });
     },
+
     go: (route, appendToHistory = true) => {
         console.log(`going to ${route}`);
     },
