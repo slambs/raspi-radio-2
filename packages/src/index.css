@@ -2,9 +2,9 @@
 
 :root {
     --main-bg-color: black;
-    --main-txt-color: bisque;
+    --main-txt-color: #e3e3e3;
     --txt-size-large: 3rem;
-    --txt-size-xlarge: 10rem;
+    --txt-size-xlarge: 9rem;
 }
 @font-face {
     font-family: Popins;
@@ -78,6 +78,7 @@ nav {
     grid-row: 2;
     font-size: var(--txt-size-xlarge);
     color: var(--main-txt-color);
+    margin-left: 0.3em;
 }
 
 .smallClock {

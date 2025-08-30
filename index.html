@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raspi Radio</title>
 
-    <script src="app.js" defer type="module"></script>
+    <script src="./packages/src/app.js" defer type="module"></script>
 
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./packages/src/index.css" />
 </head>
 
 <body>
@@ -17,15 +17,19 @@
     <div class="AppWrapper">
         <nav>
             <a class="navlink navbarItemClock" href="/">
-                🕛
+                <img src="./packages/public/clock_icon.svg" />
             </a>
-            <a class="navlink navbarItemRadio" href="/Radio">
-                📻
+            <a class="navlink navbarItemRadio" href="/radio">
+                <img src="./packages/public/radio_icon.svg" />
             </a>
-            <a class="navlink navbarItemSettings" href="/Settings">
-                ⛭
+            <a class=" navlink navbarItemSettings" href="/settings">
+                <img src="./packages/public/settings_icon.svg" />
             </a>
         </nav>
+
+
+        <main>
+        </main>
 
         <!-- clock -->
         <div id="largeClock" class="largeClock">00:00:00</div>
