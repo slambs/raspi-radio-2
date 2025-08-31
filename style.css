@@ -86,3 +86,7 @@ nav {
     grid-column: 1;
     font-size: 120px;
 }
+
+h1 {
+    color: var(--main-txt-color);
+}

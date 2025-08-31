@@ -21,21 +21,13 @@ const Router = {
         let pageElement = null;
         switch (route) {
             case '/':
-                pageElement = document.createElement('h1');
-                pageElement.textContent = 'Menu';
+                pageElement = document.createElement('clock-page');
                 break;
             case '/radio':
-                pageElement = document.createElement('h1');
-                pageElement.textContent = 'Menu';
+                pageElement = document.createElement('radio-page');
+                // pageElement.textContent = 'Radio';
                 break;
             default:
-                if (route.startsWith('/product-')) {
-                    pageElement = document.createElement('h1');
-                    pageElement.textContent = 'Details';
-                    pageElement.dataset.productId = route.substring(
-                        route.lastIndexOf('-') + 1
-                    );
-                }
                 break;
         }
         if (pageElement) {

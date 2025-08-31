@@ -1,8 +1,8 @@
 import Router from './services/Router.js';
 import API from './services/API.js';
-import { startClock } from './services/Clock.js';
-
-startClock();
+//components
+import { ClockPage } from './components/clock.js';
+import { RadioPage } from './components/radio.js';
 
 window.router = Router;
 window.api = API;
