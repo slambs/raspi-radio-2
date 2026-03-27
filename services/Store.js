@@ -1,5 +1,5 @@
 const Store = {
-    radioStations: null,
+    RadioStations: null,
 };
 
 export default Store;

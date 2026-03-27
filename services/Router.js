@@ -3,20 +3,25 @@ const Router = {
         document.querySelectorAll('a.navlink').forEach((link) => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
-                const url = link.pathname;
-                console.log(link.pathname);
-                Router.go(url);
+                Router.go(link.pathname);
             });
         });
-        Router.go('/');
+
+        window.addEventListener('popstate', () => {
+            Router.go(window.location.pathname, false);
+        });
+
+        Router.go(window.location.pathname || '/', false);
     },
 
     go: (route, appendToHistory = true) => {
-        console.log(`going to ${route}`);
-
         if (appendToHistory) {
             history.pushState({ route }, '', route);
         }
+
+        document.querySelectorAll('a.navlink').forEach((link) => {
+            link.classList.toggle('active', link.pathname === route);
+        });
 
         let pageElement = null;
         switch (route) {
@@ -25,15 +30,16 @@ const Router = {
                 break;
             case '/radio':
                 pageElement = document.createElement('radio-page');
-                // pageElement.textContent = 'Radio';
                 break;
             default:
+                pageElement = document.createElement('clock-page');
+                history.replaceState({ route: '/' }, '', '/');
                 break;
         }
-        if (pageElement) {
-            document.querySelector('main').innerHTML = '';
-            document.querySelector('main').appendChild(pageElement);
-        }
+
+        const main = document.querySelector('main');
+        main.innerHTML = '';
+        main.appendChild(pageElement);
     },
 };
 

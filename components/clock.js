@@ -1,34 +1,32 @@
 export class ClockPage extends HTMLElement {
     constructor() {
         super();
-
         this._interval = null;
     }
 
     connectedCallback() {
         const template = document.getElementById('clock-template');
-        const content = template.content.cloneNode(true);
-        this.appendChild(content);
+        this.appendChild(template.content.cloneNode(true));
 
-        const clock = this.querySelector('#largeClock');
-        this._startClock(clock);
+        this._timeEl = this.querySelector('.clock-time');
+        this._dateEl = this.querySelector('.clock-date');
+        this._tick();
+        this._interval = setInterval(() => this._tick(), 1000);
     }
 
     disconnectedCallback() {
-        if (this._interval) {
-            clearInterval(this._interval);
-        }
+        if (this._interval) clearInterval(this._interval);
     }
 
-    _drawClock(clock) {
-        if (clock) {
-            clock.textContent = new Date().toLocaleTimeString();
-        }
-    }
-
-    _startClock(clock) {
-        this._drawClock(clock); // initial load
-        this._interval = setInterval(() => this._drawClock(clock), 1000);
+    _tick() {
+        const now = new Date();
+        this._timeEl.textContent = now.toLocaleTimeString('en-GB');
+        this._dateEl.textContent = now.toLocaleDateString('en-GB', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'short',
+        });
     }
 }
+
 customElements.define('clock-page', ClockPage);

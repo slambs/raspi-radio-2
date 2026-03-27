@@ -1,84 +1,275 @@
-/** @format */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Mono';
+    src: url('./font/JetBrainsMono-Regular.ttf');
+}
 
 :root {
-    --main-bg-color: white;
-    --main-txt-color: #e3e3e3;
-    --txt-size-large: 3rem;
-    --txt-size-xlarge: 9rem;
-}
-@font-face {
-    font-family: Popins;
-    src: url(./font/JetBrainsMono-Regular.ttf);
+    --bg: #0d0d0d;
+    --surface: #181818;
+    --elevated: #222;
+    --border: #2a2a2a;
+    --accent: #c084fc;
+    --text: #f0f0f0;
+    --text-muted: #555;
+    --nav-h: 64px;
 }
 
 body {
-    background-color: var(--main-bg-color);
-    font-family: Popins;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Mono', monospace;
+    height: 100dvh;
+    overflow: hidden;
 }
 
-.AppWrapper {
-    display: grid;
-    grid-template-columns: 200px 400px 200px;
-    grid-template-rows: 100px 240px 100px;
-    /* This makes the nav a grid item that spans the whole first row */
-    grid-template-areas:
-        'nav nav nav'
-        'radio radio radio'
-        '. . .';
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-width: 540px;
+    margin: 0 auto;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
 }
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+/* ── Nav ── */
 
 nav {
-    /* Make the nav element a grid container */
-    display: grid;
-    grid-area: nav; /* Position the nav in the grid-area we defined */
-    grid-template-columns: 1fr 1fr 1fr; /* Create three columns for the nav items */
+    height: var(--nav-h);
+    display: flex;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
-.navbarItemClock {
-    justify-self: center;
-    align-self: center;
-    font-size: var(--txt-size-large);
+.navlink {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-muted);
+    gap: 5px;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
 }
 
-.navbarItemRadio {
-    justify-self: center;
-    align-self: center;
-    font-size: var(--txt-size-large);
+.navlink img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1) brightness(0.35);
+    transition: filter 0.2s;
 }
 
-.navbarItemSettings {
-    justify-self: center;
-    align-self: center;
-    font-size: var(--txt-size-large);
+.navlink.active {
+    color: var(--accent);
 }
 
-.clockStyle {
-    grid-column: 1/2;
-    color: var(--main-txt-color);
-    margin: 6% 0% 0% 20%;
+.navlink.active img {
+    filter: invert(72%) sepia(52%) saturate(600%) hue-rotate(232deg) brightness(105%);
 }
 
-.tempStyle {
-    grid-column: 3;
-    grid-row: 3;
-    color: var(--main-txt-color);
-    font-size: small;
+/* ── Clock Page ── */
+
+clock-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.largeClock {
-    grid-column: 1/3;
-    grid-row: 2;
-    font-size: var(--txt-size-xlarge);
-    color: var(--main-txt-color);
-    margin-left: 0.3em;
+.clock-display {
+    text-align: center;
+    padding: 1rem;
 }
 
-.smallClock {
-    grid-row: 3;
-    grid-column: 1;
-    font-size: 120px;
+.clock-time {
+    font-size: clamp(2.8rem, 16vw, 5.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
 }
 
-h1 {
-    color: var(--main-txt-color);
+.clock-date {
+    font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ── Radio Page ── */
+
+radio-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* carousel */
+
+.carousel-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-block: 2rem;
+    padding-inline: calc(50% - 65px);
+    scroll-padding-inline: calc(50% - 65px);
+    list-style: none;
+    width: 100%;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s;
+}
+
+.carousel-card:active {
+    transform: scale(0.93);
+}
+
+.card-img-wrap {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2.5px solid transparent;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    flex-shrink: 0;
+}
+
+.carousel-card.active .card-img-wrap {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.35);
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background: var(--elevated);
+}
+
+.card-label {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.04em;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.carousel-card.active .card-label {
+    color: var(--text);
+}
+
+/* player bar */
+
+.player {
+    padding: 1.25rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.player-label {
+    font-size: 0.58rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.player-name {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.play-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: #0d0d0d;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: opacity 0.15s;
+}
+
+.play-btn:disabled {
+    background: var(--elevated);
+    color: var(--text-muted);
+    cursor: default;
+}
+
+.play-btn:not(:disabled):active {
+    opacity: 0.7;
 }

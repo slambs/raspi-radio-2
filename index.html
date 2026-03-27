@@ -1,79 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raspi Radio</title>
-
     <script src="./app.js" defer type="module"></script>
-
     <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
+    <div class="app">
+        <main></main>
 
-    <!-- navigation -->
-    <div class="AppWrapper">
         <nav>
-            <a class="navlink navbarItemClock" href="/">
-                <img src="./data/images/clock_icon.svg" />
+            <a class="navlink" href="/">
+                <img src="./data/images/clock_icon.svg" alt="Clock" />
+                <span>Clock</span>
             </a>
-            <a class="navlink navbarItemRadio" href="/radio">
-                <img src="./data/images/radio_icon.svg" />
-            </a>
-            <a class=" navlink navbarItemSettings" href="/settings">
-                <img src="./data/images/settings_icon.svg" />
+            <a class="navlink" href="/radio">
+                <img src="./data/images/radio_icon.svg" alt="Radio" />
+                <span>Radio</span>
             </a>
         </nav>
 
-
-        <main>
-        </main>
-
-        <!-- clock -->
         <template id="clock-template">
-            <div id="largeClock" class="largeClock">00:00:00</div>
-        </template>
-
-        <!-- radio -->
-        <template id="radio-template">
-            <link rel="stylesheet" href="./components/radio.css" />
-            <div class="radiomenu">
-                <ul>
-                    <li>
-                        <h4>Kiss 88.9</h4>
-                        <audio controls>
-                            <source src="https://stream.radiojar.com/64p6ktzntg0uv" type="audio/mpeg">
-                        </audio>
-                    </li>
-                    <li>
-                        <h2>Page 2</h2>
-                    </li>
-                    <li>
-                        <h2>Page 3</h2>
-                    </li>
-                    <li>
-                        <h2>Page 4</h2>
-                    </li>
-                </ul>
+            <div class="clock-display">
+                <div class="clock-time">00:00:00</div>
+                <div class="clock-date"></div>
             </div>
         </template>
-
-
-
-        <!-- settings -->
-        <template>
-            <div id="settings"></div>
-        </template>
     </div>
-
-
-
-
-
 </body>
-
-
 
 </html>

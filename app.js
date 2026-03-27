@@ -1,7 +1,7 @@
 import Router from './services/Router.js';
 import API from './services/API.js';
 import Store from './services/Store.js';
-import { loadData } from './services/radioStations.js';
+import { loadData } from './services/RadioStations.js';
 
 //Load components - they may stay unused
 import { ClockPage } from './components/clock.js';
