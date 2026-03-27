@@ -1,7 +1,7 @@
 /** @format */
 
 :root {
-    --main-bg-color: black;
+    --main-bg-color: white;
     --main-txt-color: #e3e3e3;
     --txt-size-large: 3rem;
     --txt-size-xlarge: 9rem;
@@ -32,14 +32,6 @@ nav {
     display: grid;
     grid-area: nav; /* Position the nav in the grid-area we defined */
     grid-template-columns: 1fr 1fr 1fr; /* Create three columns for the nav items */
-}
-
-.radio {
-    display: grid;
-    grid-column: 2/3;
-    align-self: center;
-    grid-template-columns: 1fr;
-    color: red;
 }
 
 .navbarItemClock {

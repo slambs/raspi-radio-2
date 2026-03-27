@@ -1,13 +1,17 @@
 import Router from './services/Router.js';
 import API from './services/API.js';
-//components
+import Store from './services/Store.js';
+import { loadData } from './services/radioStations.js';
+
+//Load components - they may stay unused
 import { ClockPage } from './components/clock.js';
 import { RadioPage } from './components/radio.js';
 
-window.router = Router;
-window.api = API;
+window.app = {};
+app.store = Store;
+app.router = Router;
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    window.router.init();
-    window.api.loadRadioStations();
+window.addEventListener('DOMContentLoaded', async () => {
+    await loadData();
+    app.router.init();
 });

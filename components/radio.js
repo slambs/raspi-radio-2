@@ -8,6 +8,9 @@ export class RadioPage extends HTMLElement {
         const template = document.getElementById('radio-template');
         const content = template.content.cloneNode(true);
         this.appendChild(content);
+
+        console.log('you got here');
+        console.log(app.store);
     }
 }
 
