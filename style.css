@@ -73,6 +73,7 @@ nav {
 .navlink img {
     width: 22px;
     height: 22px;
+    object-fit: contain;
     filter: invert(1) brightness(0.35);
     transition: filter 0.2s;
 }
@@ -139,8 +140,8 @@ radio-page {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-block: 2rem;
-    padding-inline: calc(50% - 65px);
-    scroll-padding-inline: calc(50% - 65px);
+    padding-inline: calc(50% - 96px);
+    scroll-padding-inline: calc(50% - 96px);
     list-style: none;
     width: 100%;
 }
@@ -152,7 +153,7 @@ radio-page {
 .carousel-card {
     scroll-snap-align: center;
     flex-shrink: 0;
-    width: 130px;
+    width: 192px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,8 +168,8 @@ radio-page {
 }
 
 .card-img-wrap {
-    width: 110px;
-    height: 110px;
+    width: 168px;
+    height: 140px;
     border-radius: 20px;
     overflow: hidden;
     border: 2.5px solid transparent;
