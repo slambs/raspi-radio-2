@@ -17,7 +17,7 @@
     --accent: #c084fc;
     --text: #f0f0f0;
     --text-muted: #555;
-    --nav-h: 64px;
+    --nav-h: 72px;
 }
 
 body {
@@ -38,6 +38,14 @@ body {
     border-right: 1px solid var(--border);
 }
 
+@media (min-width: 768px) {
+    .app {
+        max-width: 100%;
+        border-left: none;
+        border-right: none;
+    }
+}
+
 main {
     flex: 1;
     overflow-y: auto;
@@ -55,6 +63,14 @@ nav {
     flex-shrink: 0;
 }
 
+@media (min-width: 768px) {
+    nav {
+        order: -1;
+        border-top: none;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
 .navlink {
     flex: 1;
     display: flex;
@@ -62,19 +78,29 @@ nav {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--text-muted);
-    gap: 5px;
-    font-size: 0.6rem;
+    color: #999;
+    gap: 6px;
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
+    background: var(--elevated);
+    border-radius: 0;
+}
+
+.navlink + .navlink {
+    border-left: 1px solid var(--border);
+}
+
+.navlink:active {
+    background: #2a2a2a;
 }
 
 .navlink img {
-    width: 22px;
-    height: 22px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
-    filter: invert(1) brightness(0.35);
+    filter: brightness(0.7);
     transition: filter 0.2s;
 }
 
@@ -101,15 +127,15 @@ clock-page {
 }
 
 .clock-time {
-    font-size: clamp(2.8rem, 16vw, 5.5rem);
+    font-size: clamp(4rem, 18vw, 8rem);
     letter-spacing: 0.04em;
     line-height: 1;
 }
 
 .clock-date {
-    font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
     color: var(--text-muted);
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
@@ -223,7 +249,7 @@ radio-page {
     border-top: 1px solid var(--border);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
     flex-shrink: 0;
 }
@@ -250,13 +276,13 @@ radio-page {
 }
 
 .play-btn {
-    width: 46px;
-    height: 46px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     border: none;
     background: var(--accent);
     color: #0d0d0d;
-    font-size: 1rem;
+    font-size: 1.4rem;
     cursor: pointer;
     display: flex;
     align-items: center;

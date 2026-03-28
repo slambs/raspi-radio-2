@@ -1,36 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Raspi Radio</title>
+        <script src="./app.js" defer type="module"></script>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raspi Radio</title>
-    <script src="./app.js" defer type="module"></script>
-    <link rel="stylesheet" href="./style.css" />
-</head>
+    <body>
+        <div class="app">
+            <main></main>
 
-<body>
-    <div class="app">
-        <main></main>
+            <nav>
+                <a class="navlink" href="/">
+                    <img src="./data/images/clock_icon.svg" alt="Clock" />
+                    <span>Clock</span>
+                </a>
+                <a class="navlink" href="/radio">
+                    <img src="./data/images/radio_icon.svg" alt="Radio" />
+                    <span>Radio</span>
+                </a>
+            </nav>
 
-        <nav>
-            <a class="navlink" href="/">
-                <img src="./data/images/clock_icon.svg" alt="Clock" />
-                <span>Clock</span>
-            </a>
-            <a class="navlink" href="/radio">
-                <img src="./data/images/radio_icon.svg" alt="Radio" />
-                <span>Radio</span>
-            </a>
-        </nav>
-
-        <template id="clock-template">
-            <div class="clock-display">
-                <div class="clock-time">00:00:00</div>
-                <div class="clock-date"></div>
-            </div>
-        </template>
-    </div>
-</body>
-
+            <template id="clock-template">
+                <div class="clock-display">
+                    <div class="clock-time">00:00:00</div>
+                    <div class="clock-date"></div>
+                </div>
+            </template>
+        </div>
+    </body>
 </html>
